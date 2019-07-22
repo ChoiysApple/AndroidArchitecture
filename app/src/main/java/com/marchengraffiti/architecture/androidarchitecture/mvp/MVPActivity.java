@@ -18,7 +18,7 @@ public class MVPActivity extends AppCompatActivity {
 
     }
 
-    public static Intent getINtent(Context context){
+    public static Intent getIntent(Context context){
         return new Intent(context, MVPActivity.class);
     }
 }

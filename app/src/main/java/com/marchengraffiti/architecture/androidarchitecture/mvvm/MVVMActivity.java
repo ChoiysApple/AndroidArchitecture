@@ -18,7 +18,7 @@ public class MVVMActivity extends AppCompatActivity {
 
     }
 
-    public static Intent getINtent(Context context){
+    public static Intent getIntent(Context context){
         return new Intent(context, MVCActivity.class);
     }
 }

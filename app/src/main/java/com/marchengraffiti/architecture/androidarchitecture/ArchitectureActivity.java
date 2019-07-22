@@ -17,15 +17,15 @@ public class ArchitectureActivity extends AppCompatActivity {
     }
 
     public void onMVC(View view){
-        startActivity(MVCActivity.getINtent(this));
+        startActivity(MVCActivity.getIntent(this));
     }
 
     public void onMVP(View view){
-        startActivity(MVPActivity.getINtent(this));
+        startActivity(MVPActivity.getIntent(this));
     }
 
     public void onMVVM(View view){
-        startActivity(MVVMActivity.getINtent(this));
+        startActivity(MVVMActivity.getIntent(this));
     }
 
 }
