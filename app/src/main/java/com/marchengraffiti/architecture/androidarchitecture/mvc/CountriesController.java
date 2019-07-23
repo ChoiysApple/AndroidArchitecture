@@ -12,27 +12,31 @@ import io.reactivex.schedulers.Schedulers;
 
 public class CountriesController {
 
-    private MVCActivity view;
-    private CountriesService service;   //service call information
+    private MVCActivity view;               //this is view of MVC
+    private CountriesService service;       //service to get the information
+
 
     public CountriesController(MVCActivity view){
         this.view = view;
         service = new CountriesService();
         fetchCountries();
+
     }
 
     private void fetchCountries(){
-        service.getCountries()                                      //return single observable
-                .subscribeOn(Schedulers.newThread())                //telling the system this needs to run on background thread
-                .observeOn(AndroidSchedulers.mainThread())          //observe on main thread
+        service.getCountries()
+                .subscribeOn(Schedulers.newThread())        //run on background Thread
+                .observeOn(AndroidSchedulers.mainThread())  //observe on main Thread
                 .subscribeWith(new DisposableSingleObserver<List<Country>>() {
+
                     @Override
                     public void onSuccess(List<Country> value) {
                         List<String> countryNames = new ArrayList<>();
-                        for (Country country: value){
+                        for(Country country: value){
                             countryNames.add(country.countryName);
                         }
-                        view.setValues(countryNames);
+
+                        view.setValues(countryNames);       //update view
                     }
 
                     @Override

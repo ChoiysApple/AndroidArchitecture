@@ -38,15 +38,18 @@ public class MVCActivity extends AppCompatActivity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(MVCActivity.this, "You clicked " + listValues.get(position), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MVCActivity.this, "You Clicked " + listValues.get(position), Toast.LENGTH_SHORT).show();
             }
         });
+
+
     }
 
+    //method gives us values
     public void setValues(List<String> values){
         listValues.clear();
-        listValues.addAll(values);
-        adapter.notifyDataSetChanged();
+        listValues.addAll(values);      //addAll: add all data from arraylist
+        adapter.notifyDataSetChanged(); //telling the adapter there are new value
     }
 
     public static Intent getIntent(Context context){
