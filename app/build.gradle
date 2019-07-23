@@ -19,7 +19,7 @@ android {
 }
 
 def retrofitVersion = '2.5.0'
-def rxjavaVersion = "2.0.1"
+def rxJavaVersion = "2.0.1"
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -31,8 +31,8 @@ dependencies {
     implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
 
 
-    implementation "io.reactivex.rxjava2:rxandroid:$rxjavaVersion"
-    implementation "io.reactivex.rxjava2:rxjava:$rxjavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

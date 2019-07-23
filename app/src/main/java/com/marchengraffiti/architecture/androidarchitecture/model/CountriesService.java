@@ -13,7 +13,7 @@ public class CountriesService {
 
     private CountriesApi api;
 
-    private CountriesService(){
+    public CountriesService(){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())                 //convert json
