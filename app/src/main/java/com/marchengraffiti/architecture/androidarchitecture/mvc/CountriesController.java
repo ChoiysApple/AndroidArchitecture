@@ -24,6 +24,7 @@ public class CountriesController {
     }
 
     private void fetchCountries(){
+        /*
         service.getCountries()
                 .subscribeOn(Schedulers.newThread())        //run on background Thread
                 .observeOn(AndroidSchedulers.mainThread())  //observe on main Thread
@@ -31,6 +32,7 @@ public class CountriesController {
 
                     @Override
                     public void onSuccess(List<Country> value) {
+
                         List<String> countryNames = new ArrayList<>();
                         for(Country country: value){
                             countryNames.add(country.countryName);
@@ -43,7 +45,16 @@ public class CountriesController {
                     public void onError(Throwable e) {
 
                     }
-                });
+                });*/
+
+        ArrayList<String> countryNames = new ArrayList<>();
+        countryNames.add("UK");
+        countryNames.add("USA");
+        countryNames.add("France");
+        countryNames.add("South Korea");
+        countryNames.add("Canada");
+        countryNames.add("Spain");
+        view.setValues(countryNames);
     }
 
 }
