@@ -41,7 +41,7 @@ public class MVCActivity extends AppCompatActivity {
                 Toast.makeText(MVCActivity.this, "You Clicked " + listValues.get(position), Toast.LENGTH_SHORT).show();
             }
         });
-        
+
     }
 
     //method gives us values
