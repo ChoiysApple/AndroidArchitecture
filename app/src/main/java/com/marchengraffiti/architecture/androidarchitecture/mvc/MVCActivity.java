@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.marchengraffiti.architecture.androidarchitecture.R;
@@ -21,6 +23,8 @@ public class MVCActivity extends AppCompatActivity {
     private ArrayAdapter<String> adapter;
     private ListView list;
     private CountriesController controller;
+    private Button retryButton;
+    private ProgressBar progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,8 @@ public class MVCActivity extends AppCompatActivity {
         controller = new CountriesController(this);
 
         list = findViewById(R.id.list);
+        retryButton = findViewById(R.id.retryButton);
+        progress = findViewById(R.id.progress);
         adapter = new ArrayAdapter<>(this, R.layout.row_layout, R.id.listText, listValues);
 
         //on click listener
@@ -48,7 +54,22 @@ public class MVCActivity extends AppCompatActivity {
     public void setValues(List<String> values){
         listValues.clear();
         listValues.addAll(values);      //addAll: add all data from arraylist
+        retryButton.setVisibility(View.GONE);
+        list.setVisibility(View.VISIBLE);
         adapter.notifyDataSetChanged(); //telling the adapter there are new value
+    }
+
+    public void onRetry(View view){
+        controller.onRefresh();
+        list.setVisibility(View.GONE);
+        progress.setVisibility(View.VISIBLE);
+    }
+
+    public void onError(){
+        Toast.makeText(this, getString(R.string.error_msg), Toast.LENGTH_SHORT).show();
+        progress.setVisibility(View.GONE);
+        list.setVisibility(View.GONE);
+        retryButton.setVisibility(View.VISIBLE);
     }
 
     public static Intent getIntent(Context context){

@@ -24,7 +24,7 @@ public class CountriesController {
     }
 
     private void fetchCountries(){
-        /*
+
         service.getCountries()
                 .subscribeOn(Schedulers.newThread())        //run on background Thread
                 .observeOn(AndroidSchedulers.mainThread())  //observe on main Thread
@@ -32,29 +32,39 @@ public class CountriesController {
 
                     @Override
                     public void onSuccess(List<Country> value) {
+                        /*List<String> countryNames = new ArrayList<>();
 
-                        List<String> countryNames = new ArrayList<>();
-                        for(Country country: value){
+                        for(Country country : value){
                             countryNames.add(country.countryName);
-                        }
+                        }*/
 
-                        view.setValues(countryNames);       //update view
+                        ArrayList<String> countryNames = new ArrayList<>();
+                        countryNames.add("UK");
+                        countryNames.add("USA");
+                        countryNames.add("France");
+                        countryNames.add("South Korea");
+                        countryNames.add("Canada");
+                        countryNames.add("Spain");
+                        countryNames.add("China");
+                        countryNames.add("Russia");
+                        countryNames.add("Brazil");
+                        countryNames.add("North Korea");
+                        countryNames.add("Italy");
+                        countryNames.add("Switzerland");
+                        //view.onError();
+                        view.setValues(countryNames);
                     }
 
                     @Override
                     public void onError(Throwable e) {
-
+                        view.onError();
                     }
-                });*/
+                });
 
-        ArrayList<String> countryNames = new ArrayList<>();
-        countryNames.add("UK");
-        countryNames.add("USA");
-        countryNames.add("France");
-        countryNames.add("South Korea");
-        countryNames.add("Canada");
-        countryNames.add("Spain");
-        view.setValues(countryNames);
+
     }
 
+    public void onRefresh() {
+        fetchCountries();
+    }
 }
