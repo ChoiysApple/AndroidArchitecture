@@ -18,7 +18,7 @@
     View 수정시 Model 바꿔야 한다면 VIew 와 Model 사이의 연관관계가 존개 —> 잘못됨
 
 
----
+
 
 
 ## MVP
@@ -35,7 +35,6 @@
     Need to handle that information very specifically in the View —> MVVM
 
 
----
 
 
 ## MVVM
