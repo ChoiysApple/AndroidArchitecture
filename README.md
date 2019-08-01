@@ -3,8 +3,6 @@
 
 ## MVC
 
----
-
 ![](mvc-242358a2-b18c-4f53-b34b-8b900b6fba8c.png)
 
 - Clear Separation of **View** & **Controller**
@@ -19,9 +17,11 @@
 
     View 수정시 Model 바꿔야 한다면 VIew 와 Model 사이의 연관관계가 존개 —> 잘못됨
 
-## MVP
 
 ---
+
+
+## MVP
 
 ![](MVP-b4302407-6233-4885-92ab-4154d05f21e2.png)
 
@@ -34,6 +34,9 @@
     - When presenter calls View straight away to update interface when View is running
     Need to handle that information very specifically in the View —> MVVM
 
-## MVVM
 
 ---
+
+
+## MVVM
+
