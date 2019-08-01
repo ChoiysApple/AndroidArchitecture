@@ -1,26 +1,5 @@
 # [Pro Android: Modern Android Architectures - MVVM MVP MVC](https://www.udemy.com/androidarchitectures/)
 
----
-
-### Progress
-
-- Introduction
-    - [x]  Introduction
-    - [x]  Setting Foundation
-    - [x]  App Structure
-    - [x]  Building the MODEL
-- MVC
-    - [x]  Introduction to MVC
-    - [x]  Building the VIEW
-    - [x]  Building the CONTROLLER
-- MVP
-    - [x]  Introduction to MVP
-    - [x]  Building the MVP architecture
-- MVVM
-    - [ ]  Introduction to MVVM
-    - [ ]  Building the MVVM architecture
-- Conclusion
-    - [ ]  Conclusion
 
 ## MVC
 
